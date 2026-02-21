@@ -1,0 +1,18 @@
+
+- #define tiempo 75    // Reemplaza por 75 a "tiempo"  // Ahorra espacio de memoria, ya que no separo memoria para esa constante
+
+- const char*: Para declarar variable de varios caracteres " "
+
+- char: Para declarar caracter ' '
+
+- strig: Para declarar cadena (solo si se trabaja con muchos textos, investigar)
+
+- analogRead(A1);: Para leer los pines analogicos
+
+- Serial.begin(9600);  // Solo en setup
+
+- Serial.print("Texto");  // Sin salto de línea
+
+- Serial.println("Texto"); // Con salto de línea
+
+- Serial.print(variable);  // Imprimir variables

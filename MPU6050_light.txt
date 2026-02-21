@@ -1,0 +1,35 @@
+
+-----------------------------------
+
+En algunos casos hace falta Resistencias 10kΩ (2 unidades) - Pull-up I2C (CRÍTICO)
+                            Resistencias 10kΩ de SDA → 3.3V y SCL → 3.3V
+
+-----------------------------------
+
+- #include <Wire.h>       // solo para ESP32 (biblioteca para configurar mi bus I2C)
+
+- Dentro setup():  Wire.begin(SDA, SCL);        // Con pines específicos (47, 48)  // Define los pines a usar
+
+-----------------------------------
+
+- #include <MPU6050_light.h>
+
+- MPU6050 mpu(Wire);                // Constructor con objeto Wire
+
+Dentro setup():
+
+	- mpu.begin();                      // Inicializa la comunicación con el MPU
+
+	- mpu.setFilterGyroCoef(0.75);      // Confianza en giroscopio (0.0-1.0)
+
+	- mpu.setFilterAccCoef(0.25);      // Confianza en acelerómetro
+
+	- mpu.calcOffsets();              // Calibrar giroscopio
+
+	- mpu.update();                   // Leer todos los datos del MPU (ACEL, GIRO, TEMP)
+
+	- mpu.getAngleX();               // Devuelve el ángulo X en º (fusionado acel+giro)
+
+	- mpu.getAngleY();               // Devuelve el ángulo Y en º (fusionado acel+giro)
+
+	- mpu.getAngleZ();               // Devuelve el ángulo Z en º (solo giroscopio)

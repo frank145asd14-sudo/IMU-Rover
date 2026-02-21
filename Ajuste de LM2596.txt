@@ -1,0 +1,10 @@
+
+⚡ Estrategia de ajuste SEGURA:
+
+Considerando el error del multímetro:
+
+Si ajustas el LM2596 para que el multímetro muestre 4.98V:
+
+- Valor real mínimo posible: 4.952V (4.98 - 0.028) ✅ Seguro
+
+- Valor real máximo posible: 5.008V (4.98 + 0.028) ✅ Seguro

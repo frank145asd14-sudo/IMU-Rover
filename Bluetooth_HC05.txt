@@ -1,0 +1,35 @@
+---------------------------------------------------------------------
+Codigos parecidos al monitor serial, solo que ya no inicia con serial
+---------------------------------------------------------------------
+---------
+ESP32-S3:
+---------
+
+- #include <HardwareSerial.h>            // Biblioteca
+
+- HardwareSerial hc05(1);                // UART1 y UART2 (máximo)  /  Declarar objeto Serial para HC-05, se puede cambiar el nombre hc05
+
+- Dentro de setup():  hc05.begin(115200, SERIAL_8N1, RX_PIN, TX_PIN);       // Iniciar comunicación  (115200 -> maxima velocidad - menor fiabilidad)
+                                                                            // Falta poner los pines RX y TX
+-------------
+ARDUINO-NANO:
+-------------
+
+- #include <SoftwareSerial.h>          // Biblioteca
+
+- SoftwareSerial BT(RX_PIN, TX_PIN);   //  Declarar objeto Serial para HC-05, se puede cambiar el nombre BT
+
+- Dentro setup():  BT.begin(115200);     // Iniciar comunicación
+
+-----------------------------------------------------------------------------------------
+Codigos para los dos: El nombre antes del punto es el que se cambia segun como lo designe
+-----------------------------------------------------------------------------------------
+
+- BT.parseInt();                  // Leer número entero
+
+- BT.parseFloat();                // Leer número con decimales
+
+- BT.print(numero);               // Envia el numero sea entero o flotante: "numero"
+
+- BT.available();                 // Devuelve el número de bytes disponibles para leer: 0 = No hay datos / >0 = Hay datos para leer
+                                  //                              Actua el "if()" como:    (True)            (False)
